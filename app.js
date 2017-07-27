@@ -4,7 +4,7 @@ const express = require('express');
 const fs = require('fs');
 //const handlebars = require('express-handlebars');
 const PDFDocument = require('pdfkit');
-const {user, pass, accessToken, clientID, storeHash} = require('./config.json');
+const {user, pass, accessToken, clientID, storeHash} = require('./config');
 
 const imagePathRoot = 'https://store-kr5xz.mybigcommerce.com/dav/product_images/configured_products/';
 const gdaProductID = 565;
