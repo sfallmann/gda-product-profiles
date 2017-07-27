@@ -20,7 +20,9 @@ app.get('/api/gda/prod_profiles', function (req, res) {
   const orderID = '1205';
   getOrderProducts(orderID)
   .then((products) => {
-    res.send(products);
+    //res.send(products);
+    res.status(200);
+    res.json({"data": "webhook hit endpoint"});
   })
   .catch(console.log);
   //res.render('main', { test: 'Hey - It works!'});
