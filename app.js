@@ -15,23 +15,21 @@ app.use(bodyParser.json());
 //app.set('view engine', 'hbs');
 const port = process.env.PORT || 3000;
 
-app.get('/api/gda/prod_profiles', function (req, res) {
+app.post('/api/gda/prod_profiles', function (req, res) {
   console.log(req.headers);
   console.log(req.body);
   const orderID = '1205';
   getOrderProducts(orderID)
   .then((products) => {
     //res.send(products);
-    res.status(200);
-    res.json({"data": "webhook hit endpoint"});
+    
+    res.json({"data": "webhook hit endpoint"}).res.status(200);
   })
   .catch(console.log);
   //res.render('main', { test: 'Hey - It works!'});
 });
 
 app.listen(port);
-
-
 
 
 function getOrderProducts(orderID){
