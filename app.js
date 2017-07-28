@@ -17,6 +17,7 @@ const port = process.env.PORT || 3000;
 
 app.get('/api/gda/prod_profiles', function (req, res) {
   console.log(req.headers);
+  console.log(req.body);
   const orderID = '1205';
   getOrderProducts(orderID)
   .then((products) => {
